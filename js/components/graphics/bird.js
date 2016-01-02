@@ -2,7 +2,7 @@ var BirdGraphicsComponent = function(entity, radius) {
   this.entity = entity;
   this.radius = radius;
   this.image = new Image();
-  this.image.src = './img/paint-bird-down.png'
+  this.image.src = './img/paint-bird-down.png';
 };
 
 BirdGraphicsComponent.prototype.draw = function(context) {

@@ -2,10 +2,21 @@ var GraphicsSystem = function (entities) {
   this.entities = entities;
   this.canvas = document.getElementById('main-canvas');
   this.context = this.canvas.getContext('2d');
+  this.paused = true;
+
 };
 
 GraphicsSystem.prototype.run = function () {
   window.requestAnimationFrame(this.tick.bind(this));
+  this.paused = false;
+};
+
+GraphicsSystem.prototype.pause = function () {
+  this.paused = true;
+};
+
+GraphicsSystem.prototype.reset = function () {
+  this.paused = false;
 };
 
 GraphicsSystem.prototype.tick = function () {
@@ -31,7 +42,10 @@ GraphicsSystem.prototype.tick = function () {
   }
 
   this.context.restore();
-  window.requestAnimationFrame(this.tick.bind(this));
+  
+  if(!this.paused) {
+    window.requestAnimationFrame(this.tick.bind(this));
+  };
 };
 
 exports.GraphicsSystem = GraphicsSystem;
