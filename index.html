@@ -12,18 +12,18 @@
   </head>
   <body>
     <div class="logo">
-      <img src="./img/bird-logo.png">
-      <input class="reload-btn" type="button" value="Start Game" onClick="window.location.reload()">
+      <img class="unselectable" unselectable="on" tabIndex="-1" src="./img/bird-logo.png">
+      <input unselectable="on" class="unselectable reload-btn" type="button" value="Start Game" onClick="window.location.reload()">
     </div>
-    <canvas id="main-canvas"></canvas>
+    <canvas class="unselectable" unselectable="on" id="main-canvas"></canvas>
     
     <div style="display:none;">
       <img id="source" src="./img/paint-bird-down.png" width="100" height="100">
     </div>
     
-    <h1 id="score"></h1>
+    <h1 class="unselectable" unselectable="on" id="score"></h1>
     <div class="controllers">
-      <audio controls loop autoplay preload="metadata">
+      <audio class="unselectable" controls loop autoplay preload="metadata" unselectable="on">
         <source src="./sounds/song.mp3" type="audio/mpeg">
       </audio>
     </div>
